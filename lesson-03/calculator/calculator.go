@@ -1,4 +1,4 @@
-// Go Workshop - Part 03
+// Go Workshop - Lesson 03
 // Packages
 package calculator
 

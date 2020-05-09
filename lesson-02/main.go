@@ -1,4 +1,4 @@
-// Go Workshop - Part 02
+// Go Workshop - Lesson 02
 // Arguments and exit code
 package main
 
@@ -18,7 +18,7 @@ func main() {
 	flag.Parse()
 
 	if who == "" {
-		fmt.Println("Error: need to know who you want to greet!")
+		fmt.Println("Error: need to know who you want to greet")
 		// Package os provides functions to access operating system,
 		// function Exit() terminates the program, here with code
 		// 1.

@@ -1,8 +1,9 @@
-// Go Workshop - Part 03
+// Go Workshop - Lesson 03
 // Packages
 package main
 
 import (
+	// Import of a standard package.
 	"fmt"
 
 	// Import of the own package.
