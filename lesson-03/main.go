@@ -12,7 +12,7 @@ import (
 
 func main() {
 	// Usage of function Add() of the calculator package.
-	sum := calculator.Add(1000, 300, 30, 7)
+	var sum int = calculator.Add(1000, 300, 30, 7)
 
 	fmt.Println("Sum is", sum)
 }

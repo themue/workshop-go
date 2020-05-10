@@ -35,7 +35,9 @@ func output(in string) {
 
 // doIt has no arguments and no return values.
 func doIt() {
-	greeting, err := greet(how(), who())
+	var greeting string
+	var err error
+	greeting, err = greet(how(), who())
 	if err != nil {
 		fmt.Printf("cannot greet: %v", err)
 		return

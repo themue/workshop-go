@@ -4,7 +4,7 @@ package calculator
 
 // Add is an exportet function to add multiple integers.
 func Add(a int, bs ...int) int {
-	tmp := a
+	var tmp int = a
 	for _, b := range bs {
 		tmp = add(tmp, b)
 	}
