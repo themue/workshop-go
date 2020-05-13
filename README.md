@@ -1,5 +1,9 @@
 # Workshop "Introduction to Go"
 
+## History
+
+## Tools
+
 ## Basics
 
 - [Lesson 01 - Hello, World](lesson-01/main.go)
@@ -10,3 +14,17 @@
 - [Lesson 06 - Variables](lesson-06/main.go)
 - [Lesson 07 - Basic Types](lesson-07/main.go)
 - [Lesson 08 - Compound Types](lesson-08/main.go)
+
+## Control
+
+## Specialties
+
+## Concurrency
+
+## Standard Library
+
+## Testing
+
+## Patterns
+
+## Snares

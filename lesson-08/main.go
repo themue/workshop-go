@@ -52,35 +52,35 @@ func Structs() {
 		i int
 	}{true, "go", 1}
 
-	type bT struct {
+	type B struct {
 		x string
 		y int
 		z string
 	}
 
-	var b bT
+	var b B
 
 	// Unset fields get zero values.
-	b = bT{
+	b = B{
 		x: "X",
 		z: "Z",
 	}
 
 	// Nesting is no problem.
-	type cT struct {
+	type C struct {
 		c string
-		d bT
+		d B
 	}
 
-	c := cT{"C", bT{"x", 1, "y"}}
+	c := C{"C", B{"x", 1, "y"}}
 
 	// And embedding.
-	type dT struct {
-		cT
+	type D struct {
+		C
 		d string
 	}
 
-	d := dT{cT{"A", bT{"B", 99, "C"}}, "D"}
+	d := D{C{"A", B{"B", 99, "C"}}, "D"}
 
 	fmt.Println("----- Structs")
 	fmt.Println("struct a:", a, "/ struct b:", b, "/ struct c:", c, "/ struct d:", d)
@@ -92,9 +92,9 @@ func Functions() {
 		return "s"
 	}
 
-	type iT func() int
+	type I func() int
 
-	var i iT = func() int {
+	var i I = func() int {
 		return 1337
 	}
 
@@ -106,9 +106,66 @@ func Functions() {
 	fmt.Println("function s:", s(), "/ function i:", i(), "/ struct b:", b())
 }
 
+// Channels shows channels and how they are used for
+// sending and receiving.
+func Channels() {
+	var a chan string
+	var b chan string
+
+	// Create without buffer.
+	a = make(chan string)
+
+	go func() {
+		// Send in goroutine, otherwise blocking.
+		a <- "Hello"
+	}()
+
+	// Create with buffer size 1, sending uses it.
+	b = make(chan string, 1)
+
+	b <- "World"
+
+	fmt.Println("----- Channels")
+	fmt.Println("receiving a:", <-a, "/ receiving b:", <-b)
+}
+
+// I defines the interface for the Interfaces function.
+type I interface {
+	Add(x int) int
+}
+
+// First is one type implementing I.
+type First int
+
+// Add is the implemented interface method.
+func (f First) Add(x int) int {
+	return int(f) + x
+}
+
+// Second is another type implementing I.
+type Second func(x int) int
+
+// Add is the implemented interface method.
+func (s Second) Add(x int) int {
+	return s(x) + x
+}
+
+// Interfaces shows the definition and usage of interfaces.
+func Interfaces() {
+	var a First = 5
+	var b Second = func(x int) int {
+		return x - 1
+	}
+
+	fmt.Println("----- Interfaces")
+	fmt.Println("interface implementor a:", a.Add(4), "/ interface implementor b:", b.Add(4))
+}
+
 func main() {
 	Arrays()
 	Slices()
 	Structs()
 	Functions()
+	Channels()
+	Interfaces()
 }
