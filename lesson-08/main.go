@@ -129,43 +129,10 @@ func Channels() {
 	fmt.Println("receiving a:", <-a, "/ receiving b:", <-b)
 }
 
-// I defines the interface for the Interfaces function.
-type I interface {
-	Add(x int) int
-}
-
-// First is one type implementing I.
-type First int
-
-// Add is the implemented interface method.
-func (f First) Add(x int) int {
-	return int(f) + x
-}
-
-// Second is another type implementing I.
-type Second func(x int) int
-
-// Add is the implemented interface method.
-func (s Second) Add(x int) int {
-	return s(x) + x
-}
-
-// Interfaces shows the definition and usage of interfaces.
-func Interfaces() {
-	var a First = 5
-	var b Second = func(x int) int {
-		return x - 1
-	}
-
-	fmt.Println("----- Interfaces")
-	fmt.Println("interface implementor a:", a.Add(4), "/ interface implementor b:", b.Add(4))
-}
-
 func main() {
 	Arrays()
 	Slices()
 	Structs()
 	Functions()
 	Channels()
-	Interfaces()
 }
