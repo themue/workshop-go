@@ -18,6 +18,9 @@
 
 ## Control
 
+- [Lesson 10 - If](lesson-10/main.go)
+- [Lesson 11 - Switch](lesson-11/main.go)
+
 ## Concurrency
 
 ## Standard Library
