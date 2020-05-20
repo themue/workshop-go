@@ -20,6 +20,7 @@
 
 - [Lesson 10 - If](lesson-10/main.go)
 - [Lesson 11 - Switch](lesson-11/main.go)
+- [Lesson 12 - For](lesson-12/main.go)
 
 ## Concurrency
 
