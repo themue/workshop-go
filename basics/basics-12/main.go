@@ -1,4 +1,4 @@
-// Go Workshop - Lesson 12
+// Go Workshop - Basics 12
 // For
 package main
 

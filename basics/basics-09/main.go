@@ -1,4 +1,4 @@
-// Go Workshop - Lesson 09
+// Go Workshop - Basics 09
 // Methods and Interfaces
 package main
 

@@ -1,4 +1,4 @@
-// Go Workshop - Lesson 11
+// Go Workshop - Basics 11
 // Switch
 package main
 

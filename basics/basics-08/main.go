@@ -1,4 +1,4 @@
-// Go Workshop - Lesson 08
+// Go Workshop - Basics 08
 // Compound Types
 package main
 

@@ -1,4 +1,4 @@
-// Go Workshop - Lesson 03
+// Go Workshop - Basics 03
 // Packages
 package main
 
@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	// Import of the own package.
-	"github.com/themue/workshop-go/lesson-03/calculator"
+	"github.com/themue/workshop-go/basics/basics-03/calculator"
 )
 
 func main() {

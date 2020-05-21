@@ -1,4 +1,4 @@
-// Go Workshop - Lesson 01
+// Go Workshop - Basics 01
 // Hello, World
 package main
 

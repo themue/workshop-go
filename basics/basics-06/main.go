@@ -1,4 +1,4 @@
-// Go Workshop - Lesson 06
+// Go Workshop - Basics 06
 // Variables
 package main
 

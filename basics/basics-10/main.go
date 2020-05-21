@@ -1,4 +1,4 @@
-// Go Workshop - Lesson 10
+// Go Workshop - Basics 10
 // If
 package main
 

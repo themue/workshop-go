@@ -1,4 +1,4 @@
-// Go Workshop - Lesson 02
+// Go Workshop - Basics 02
 // Arguments and exit code
 package main
 

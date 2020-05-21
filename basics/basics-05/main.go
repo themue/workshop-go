@@ -1,4 +1,4 @@
-// Go Workshop - Lesson 05
+// Go Workshop - Basics 05
 // Functions are also types
 package main
 

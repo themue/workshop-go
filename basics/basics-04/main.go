@@ -1,4 +1,4 @@
-// Go Workshop - Lesson 04
+// Go Workshop - Basics 04
 // Functions
 package main
 

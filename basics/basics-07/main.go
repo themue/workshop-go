@@ -1,4 +1,4 @@
-// Go Workshop - Lesson 07
+// Go Workshop - Basics 07
 // Basic Types
 package main
 
