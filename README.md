@@ -1,10 +1,21 @@
-# Workshop "Introduction to Go"
+# Workshop "Introduction to Programming in Go"
+
+## Introduction
+
+- [Introduction 01 - Speaker](introduction-01/README.md)
+- [Introduction 02 - Go Experience](introduction-02/README.md)
+- [Introduction 03 - Why Go](introduction-03/README.md)
 
 ## History
 
+- [History 01 - Beginning and Status](history-01/README.md)
+- [History 02 - The Team](history-02/README.md)
+
 ## Tools
 
-## Basics
+## Language
+
+### Basics
 
 - [Lesson 01 - Hello, World](lesson-01/main.go)
 - [Lesson 02 - Arguments and Exit Code](lesson-02/main.go)
@@ -16,20 +27,22 @@
 - [Lesson 08 - Compound Types](lesson-08/main.go)
 - [Lesson 09 - Methods and Interfaces](lesson-09/main.go)
 
-## Control
+### Control
 
 - [Lesson 10 - If](lesson-10/main.go)
 - [Lesson 11 - Switch](lesson-11/main.go)
 - [Lesson 12 - For](lesson-12/main.go)
 
-## Concurrency
+### Concurrency
 
 ## Standard Library
 
-## Testing
+## Practise
 
-## Patterns
+### Testing
 
-## Snares
+### Patterns
 
-## RESTful APIs
+### Snares
+
+### RESTful APIs

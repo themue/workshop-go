@@ -1,6 +1,6 @@
 # Introduction
 
-## Why Go?
+## Why Go
 
 ### Facts
 

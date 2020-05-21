@@ -15,3 +15,13 @@ _Go aims to combine the safety and performance of a statically typed compiled la
 It also aims to be suitable for modern systems – large scale – programming._
 
 Rob Pike
+
+## Current status
+
+* 2014 Renée French, the wife of Rob Pike, designed Gopher, the mascot
+* Every 6 month a new version
+* Keeping the major version, currently 1, promises no changes to the language itself; only to platforms, tools, runtime, and libraries
+* Current version is 1.14.3
+* Discussion about changes of Go
+  * Error handling
+  * Generics and contracts
