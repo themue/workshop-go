@@ -1,5 +1,4 @@
-// Go Workshop - Basics 06
-// Variables
+// Go Workshop - Basics - Variables
 package main
 
 import (

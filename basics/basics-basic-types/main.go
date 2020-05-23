@@ -1,5 +1,4 @@
-// Go Workshop - Basics 07
-// Basic Types
+// Go Workshop - Basics - Basic Types
 package main
 
 import (

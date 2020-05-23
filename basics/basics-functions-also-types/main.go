@@ -1,5 +1,4 @@
-// Go Workshop - Basics 05
-// Functions are also types
+// Go Workshop - Basics - Functions are also types
 package main
 
 import (

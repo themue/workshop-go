@@ -1,5 +1,4 @@
-// Go Workshop - Basics 04
-// Functions
+// Go Workshop - Basics - Functions
 package main
 
 import (

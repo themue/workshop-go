@@ -1,5 +1,4 @@
-// Go Workshop - Basics 09
-// Methods and Interfaces
+// Go Workshop - Basics - Methods and Interfaces
 package main
 
 import (

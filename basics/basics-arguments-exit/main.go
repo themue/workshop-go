@@ -1,5 +1,4 @@
-// Go Workshop - Basics 02
-// Arguments and exit code
+// Go Workshop - Basics - Arguments and exit code
 package main
 
 import (

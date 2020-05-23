@@ -21,15 +21,15 @@
 
 ### Basics
 
-* [Basics 01 - Hello, World](basics/basics-01/main.go)
-* [Basics 02 - Arguments and Exit Code](basics/basics-02/main.go)
-* [Basics 03 - Packages](basics/basics-03/main.go)
-* [Basics 04 - Functions](basics/basics-04/main.go)
-* [Basics 05 - Functions are also Types](basics/basics-05/main.go)
-* [Basics 06 - Variables](basics/basics-06/main.go)
-* [Basics 07 - Basic Types](basics/basics-07/main.go)
-* [Basics 08 - Compound Types](basics/basics-08/main.go)
-* [Basics 09 - Methods and Interfaces](basics/basics-09/main.go)
+* [Basics - Hello, World](basics/basics-hello-world/main.go)
+* [Basics - Arguments and Exit Code](basics/basics-arguments-exit/main.go)
+* [Basics - Package](basics/basics-package/main.go)
+* [Basics - Functions](basics/basics-functions/main.go)
+* [Basics - Functions are also Types](basics/basics-functions-also-types/main.go)
+* [Basics - Variables](basics/basics-variables/main.go)
+* [Basics - Basic Types](basics/basics-basic-types/main.go)
+* [Basics - Compound Types](basics/basics-compound-types/main.go)
+* [Basics - Methods and Interfaces](basics/basics-methods-interfaces/main.go)
 
 ### Control
 

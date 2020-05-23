@@ -1,5 +1,4 @@
-// Go Workshop - Basics 08
-// Compound Types
+// Go Workshop - Basics - Compound Types
 package main
 
 import (
