@@ -33,7 +33,7 @@ func ForClauseFor() {
 }
 
 // RangeClauseFor shows a for using a range clause to iterate
-// over arrays, slices, maps, and strings. Another when about
+// over arrays, slices, maps, and strings. Another one about
 // channels will be shown with concurrency.
 func RangeClauseFor() {
 	fmt.Println("----- Range Clause For")
@@ -57,8 +57,39 @@ func RangeClauseFor() {
 	}
 }
 
+// EndlessFor shows a for where the leaving of the loop
+// is controlled inside the loop. A major usage for goroutines
+// will be shown later.
+func EndlessFor() {
+	fmt.Println("----- Endless For")
+	x := 0
+	for {
+		x++
+		if x > 5 {
+			// Leave the loop.
+			break
+		}
+		fmt.Println("endless for:", x)
+	}
+	fmt.Println("left endless for")
+}
+
+// ContinuedFor shows how to continue a loop depending
+// on a condition.
+func ContinuedFor() {
+	fmt.Println("----- Continued For")
+	for i := 0; i < 10; i++ {
+		if i%2 == 0 {
+			continue
+		}
+		fmt.Println("continued for: i is", i)
+	}
+}
+
 func main() {
 	SingleConditionFor()
 	ForClauseFor()
 	RangeClauseFor()
+	EndlessFor()
+	ContinuedFor()
 }
