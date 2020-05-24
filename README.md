@@ -21,21 +21,21 @@
 
 ### Basics
 
-* [Basics - Hello, World](basics/basics-hello-world/main.go)
-* [Basics - Arguments and Exit Code](basics/basics-arguments-exit/main.go)
-* [Basics - Package](basics/basics-package/main.go)
-* [Basics - Functions](basics/basics-functions/main.go)
-* [Basics - Functions are also Types](basics/basics-functions-also-types/main.go)
-* [Basics - Variables](basics/basics-variables/main.go)
-* [Basics - Basic Types](basics/basics-basic-types/main.go)
-* [Basics - Compound Types](basics/basics-compound-types/main.go)
-* [Basics - Methods and Interfaces](basics/basics-methods-interfaces/main.go)
+* [Hello, World](language/hello-world/main.go)
+* [Arguments and Exit Code](language/arguments-exit/main.go)
+* [Packages](language/packages/main.go)
+* [Functions](language/functions/main.go)
+* [Functions are also Types](language/functions-are-types/main.go)
+* [Variables](language/variables/main.go)
+* [Basic Types](language/basic-types/main.go)
+* [Compound Types](language/compound-types/main.go)
+* [Methods and Interfaces](language/methods-interfaces/main.go)
 
 ### Control
 
-* [Basics 10 - If](basics/basics-10/main.go)
-* [Basics 11 - Switch](basics/basics-11/main.go)
-* [Basics 12 - For](basics/basics-12/main.go)
+* [If Statements](language/if-statements/main.go)
+* [Switch Statements](language/switch-statements/main.go)
+* [For Statements](language/for-statements/main.go)
 
 ### Concurrency
 

@@ -1,4 +1,4 @@
-// Go Workshop - Basics - Methods and Interfaces
+// Go Workshop - Language - Methods and Interfaces
 package main
 
 import (

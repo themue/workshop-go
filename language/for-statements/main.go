@@ -1,5 +1,4 @@
-// Go Workshop - Basics 12
-// For
+// Go Workshop - Language - For Statements
 package main
 
 import (

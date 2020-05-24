@@ -1,4 +1,4 @@
-// Go Workshop - Basics - Arguments and exit code
+// Go Workshop - Language - Arguments and exit code
 package main
 
 import (

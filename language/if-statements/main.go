@@ -1,5 +1,4 @@
-// Go Workshop - Basics 10
-// If
+// Go Workshop - Language - If Statements
 package main
 
 import (

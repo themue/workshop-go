@@ -1,4 +1,4 @@
-// Go Workshop - Basics - Package
+// Go Workshop - Language - Packages
 package main
 
 import (
@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	// Import of the own calculator package with full reference.
-	"github.com/themue/workshop-go/basics/basics-package/calculator"
+	"github.com/themue/workshop-go/language/packages/calculator"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-// Go Workshop - Basics - Variables
+// Go Workshop - Language - Variables
 package main
 
 import (

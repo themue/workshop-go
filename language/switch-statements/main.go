@@ -1,5 +1,4 @@
-// Go Workshop - Basics 11
-// Switch
+// Go Workshop - Language - Switch Statements
 package main
 
 import (

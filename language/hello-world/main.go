@@ -1,4 +1,4 @@
-// Go Workshop - Basics - Hello, World
+// Go Workshop - Language - Hello, World
 
 // Package main has a special role in the world of
 // Go packages. It expects a function named main()

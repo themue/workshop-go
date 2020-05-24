@@ -1,4 +1,4 @@
-// Go Workshop - Basics - Packages
+// Go Workshop - Language - Packages
 
 // Package calculator defines the own package calculator,
 // which has to be import by others for usage.
