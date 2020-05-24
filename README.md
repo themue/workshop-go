@@ -8,8 +8,8 @@
 
 ## History
 
-* [History 01 - Beginning and Status](history/history-01/README.md)
-* [History 02 - The Team](history/history-02/README.md)
+* [Beginning and Status](history/beginning-and-status/README.md)
+* [The Team](history/team/README.md)
 
 ## Tools
 
