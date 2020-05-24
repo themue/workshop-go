@@ -29,6 +29,13 @@ func ForClauseFor() {
 		fmt.Println("for clause for: y is", y)
 		y++
 	}
+
+	// As well as inits outside.
+	z := 0
+	for z < 5 {
+		fmt.Println("for clause for: z is", z)
+		z++
+	}
 }
 
 // RangeClauseFor shows a for using a range clause to iterate
@@ -56,10 +63,10 @@ func RangeClauseFor() {
 	}
 }
 
-// EndlessFor shows a for where the leaving of the loop
-// is controlled inside the loop. A major usage for goroutines
+// ForeverFor shows a for where the leaving of the loop is
+// controlled inside the loop. A major usage for goroutines
 // will be shown later.
-func EndlessFor() {
+func ForeverFor() {
 	fmt.Println("----- Endless For")
 	x := 0
 	for {
@@ -77,18 +84,36 @@ func EndlessFor() {
 // on a condition.
 func ContinuedFor() {
 	fmt.Println("----- Continued For")
-	for i := 0; i < 10; i++ {
-		if i%2 == 0 {
+	// Continue leaves inner loop.
+	for x := 0; x < 10; x++ {
+		if x%2 == 0 {
 			continue
 		}
-		fmt.Println("continued for: i is", i)
+		for y := 0; y < 10; y++ {
+			if y%2 == 0 {
+				continue
+			}
+			fmt.Println("continued for A: x is", x, " / y is", y)
+		}
 	}
+	// Continue with label can jump to label.
+	fmt.Println("-----")
+XLabel:
+	for x := 0; x < 10; x++ {
+		for y := 0; y < 10; y++ {
+			if y > x {
+				continue XLabel
+			}
+			fmt.Println("continued for B: x is", x, " / y is", y)
+		}
+	}
+
 }
 
 func main() {
 	SingleConditionFor()
 	ForClauseFor()
 	RangeClauseFor()
-	EndlessFor()
+	ForeverFor()
 	ContinuedFor()
 }
