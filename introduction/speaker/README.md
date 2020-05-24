@@ -2,7 +2,7 @@
 
 ## Speaker
 
-![Frank Müller](https://github.com/themue/workshop-go/raw/master/introduction/introduction-01/themue.jpg "Frank Müller")
+![Frank Müller](https://github.com/themue/workshop-go/raw/master/introduction/speaker/themue.jpg "Frank Müller")
 
 * [Frank Müller](https://themue.dev)
 * Oldenburg
