@@ -2,9 +2,9 @@
 
 ## Introduction
 
-* [Introduction 01 - Speaker](introduction/introduction-01/README.md)
-* [Introduction 02 - Go Experience](introduction/introduction-02/README.md)
-* [Introduction 03 - Why Go](introduction/introduction-03/README.md)
+* [Speaker](introduction/speaker/README.md)
+* [Go Experience](introduction/go-experience/README.md)
+* [Why Go](introduction/why-go/README.md)
 
 ## History
 
