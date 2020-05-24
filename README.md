@@ -13,9 +13,9 @@
 
 ## Tools
 
-* [Tools 01 - Binaries](tools/tools-01/README.md)
-* [Tools 02 - Go Subcommands](tools/tools-02/README.md)
-* [Tools 03 - Go Module Management](tools/tools-03/README.md)
+* [Binaries](tools/binaries/README.md)
+* [Go Subcommands](tools/go-subcommands/README.md)
+* [Go Module Management](tools/go-module-management/README.md)
 
 ## Language
 
