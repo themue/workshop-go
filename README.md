@@ -36,6 +36,7 @@
 * [If Statements](language/if-statements/main.go)
 * [Switch Statements](language/switch-statements/main.go)
 * [For Statements](language/for-statements/main.go)
+* [Defer Statements](language/defer-statements/main.go)
 
 ### Concurrency
 
