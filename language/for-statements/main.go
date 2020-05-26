@@ -72,7 +72,7 @@ func ForeverFor() {
 	for {
 		x++
 		if x > 5 {
-			// Leave the loop.
+			// Break allows to leave the loop.
 			break
 		}
 		fmt.Println("endless for:", x)
