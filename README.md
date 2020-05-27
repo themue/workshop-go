@@ -40,6 +40,8 @@
 
 ### Concurrency
 
+* [General](language/concurrency-general/README.md)
+
 ## Standard Library
 
 ## Practise

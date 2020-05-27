@@ -10,11 +10,11 @@
 
 ## Quote
 
-_Go aims to combine the safety and performance of a statically typed compiled language with the expressiveness and convenience of a dynamically typed interpreted language.
+_Go aims to combine the safety and performance of a statically typed compiled language with the expressiveness and convenience of a dynamically typed interpreted language._
 
-It also aims to be suitable for modern systems – large scale – programming._
+_It also aims to be suitable for modern systems – large scale – programming._
 
-Rob Pike
+-- Rob Pike
 
 ## Current status
 

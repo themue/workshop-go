@@ -31,7 +31,8 @@ func Slices() {
 	// Direct creation during assignment.
 	b = []byte{0, 1, 3, 3}
 
-	// Append with build-in command append.
+	// Append is a built-in statement to append
+	// elements to slices.
 	b = append(b, 1)
 
 	// Or get sub-slices. Take care, they are just
