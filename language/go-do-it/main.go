@@ -1,4 +1,4 @@
-// Go Workshop - Language - Goroutines - Fire and Forget
+// Go Workshop - Language - Goroutines - Go do it
 
 package main
 
@@ -8,11 +8,9 @@ import (
 )
 
 // DoIt is a simple function that will be used as goroutine.
-// It may have arguments but the return value(s) will be
-// ignored.
-//
-// The simpliest pattern is let a goroutine do something
-// and end then.
+// Those may have arguments and return values, but the
+// latter will be ignored. The simpliest pattern is to start
+// goroutine for some work and let it terminate when done.
 func DoIt(id, count int, d time.Duration) {
 	fmt.Println("----- Start Goroutine", id)
 	for i := 0; i < count; i++ {
@@ -23,11 +21,12 @@ func DoIt(id, count int, d time.Duration) {
 }
 
 func main() {
-	// Start goroutines with go.
+	// Start goroutines with go statement.
 	go DoIt(1, 25, 2*time.Millisecond)
 	go DoIt(2, 50, time.Millisecond)
 
-	// Have to wait, otherwise program would stop
-	// too fast.
+	// Have to wait a bit, otherwise program would
+	// terminate before goroutines are done. There's
+	// no waiting until all are done.
 	time.Sleep(time.Second)
 }

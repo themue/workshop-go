@@ -41,6 +41,10 @@
 ### Concurrency
 
 * [General](language/concurrency-general/README.md)
+* [Simply do it in background](language/go-do-it/main.go)
+* [Do it with result](language/go-do-it-with-result/main.go)
+* [Do it for all input](language/go-do-it-for-all/main.go)
+* [Do it with me](language/go-do-it-with-me/main.go)
 
 ## Standard Library
 
