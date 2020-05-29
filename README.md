@@ -45,6 +45,8 @@
 * [Do it with result](language/go-do-it-with-result/main.go)
 * [Do it for all input](language/go-do-it-for-all/main.go)
 * [Do it with me](language/go-do-it-with-me/main.go)
+* [Gouroutines Services](language/go-service/main.go)
+* [Doing it with Actors](language/go-actor/main.go)
 
 ## Standard Library
 
