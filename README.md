@@ -6,10 +6,11 @@
 * [Go Experience](introduction/go-experience/README.md)
 * [Why Go](introduction/why-go/README.md)
 
-## History
+## The Story
 
-* [Beginning and Status](history/beginning-and-status/README.md)
-* [The Team](history/team/README.md)
+* [Beginning and Status](story/beginning-and-status/README.md)
+* [The Team](story/team/README.md)
+* [Links](story/links/README.md)
 
 ## Tools
 
@@ -37,6 +38,7 @@
 * [Switch Statements](language/switch-statements/main.go)
 * [For Statements](language/for-statements/main.go)
 * [Defer Statements](language/defer-statements/main.go)
+* [Error Handling](language/error-handling/main.go)
 
 ### Concurrency
 

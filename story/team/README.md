@@ -1,4 +1,4 @@
-# History
+# The Story
 
 ## The Team
 
