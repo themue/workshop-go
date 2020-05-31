@@ -20,4 +20,5 @@
 * [Slack](https://invite.slack.golangbridge.org/)
 * [StackOverflow](https://stackoverflow.com/questions/tagged/go?tab=Newest)
 * [Reddit](https://www.reddit.com/r/golang/)
-* [Golang-Nuts](https://groups.google.com/forum/#!forum/golang-nuts)
+* [Google Groups Golang Nuts](https://groups.google.com/forum/#!forum/golang-nuts)
+* [Linkedin Golang Nuts](https://www.linkedin.com/groups/3712244/)
