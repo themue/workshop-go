@@ -40,6 +40,7 @@
 * [Defer Statements](language/defer-statements/main.go)
 * [Error Handling](language/error-handling/main.go)
 * [Panics](language/panics/main.go)
+* [Recovers](language/recovers/main.go)
 
 ### Concurrency
 

@@ -17,6 +17,25 @@ func RecoveredPanic(f func()) (err error) {
 	return nil
 }
 
+// SafeExecutable is a demo interface for a type using
+// the recovering.
+type SafeExecutable interface {
+	Execute() error
+	Recover(r interface{}) error
+}
+
+// Executor shows ho the given executable is executed
+// and in case of a panic it gets the chance try a
+// recovering.
+func Executor(se SafeExecutable) (err error) {
+	defer func() {
+		if r := recover(); r != nil {
+			err = se.Recover(r)
+		}
+	}()
+	return se.Execute()
+}
+
 func main() {
 	fmt.Println("----- No Panic")
 	err := RecoveredPanic(func() {
