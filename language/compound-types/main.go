@@ -16,7 +16,8 @@ func Arrays() {
 	a[0] = 1
 	a[2] = 99
 
-	fmt.Println("ints:", a, "/ strings:", b)
+	fmt.Printf("ints: %v\n", a)
+	fmt.Printf("strings: %v\n", b)
 }
 
 // Slices are sets of variables with variable lengths.
@@ -43,7 +44,9 @@ func Slices() {
 	c := b[1:]
 	c[3] = 7
 
-	fmt.Println("bools:", a, "/ bytes b:", b, "/ bytes c:", c)
+	fmt.Printf("bools a: %v\n", a)
+	fmt.Printf("bytes b: %v\n", b)
+	fmt.Printf("bytes c: %v\n", c)
 }
 
 // Maps are sets of key/value assignments. Keys have to be
@@ -72,8 +75,8 @@ func Maps() {
 	bar, barOK := msi["bar"]
 	dunno, dunnoOK := msi["dunno"]
 
-	fmt.Println("bar:", bar, "/ ok:", barOK)
-	fmt.Println("dunno:", dunno, "/ ok:", dunnoOK)
+	fmt.Printf("bar: %d / ok: %t\n", bar, barOK)
+	fmt.Printf("dunno: %d / ok: %t\n", dunno, dunnoOK)
 }
 
 // Structs are types containing a number of fields. These
@@ -117,12 +120,17 @@ func Structs() {
 
 	d := D{C{"A", B{"B", 99, "C"}}, "D"}
 
-	fmt.Println("struct a:", a, "/ struct b:", b, "/ struct c:", c, "/ struct d:", d)
+	fmt.Printf("struct a: %v\n", a)
+	fmt.Printf("struct b: %v\n", b)
+	fmt.Printf("struct c: %v\n", c)
+	fmt.Printf("struct d: %v\n", d)
 }
 
 // Functions in Go are types too. They can be declared on top level,
 // as methods, inside of functions, or dynamically defined functions.
 func Functions() {
+	fmt.Println("----- Functions")
+
 	var s func() string = func() string {
 		return "s"
 	}
@@ -137,11 +145,12 @@ func Functions() {
 		return true
 	}
 
-	fmt.Println("----- Functions")
-	fmt.Println("function s:", s(), "/ function i:", i(), "/ struct b:", b())
-	fmt.Println("anonymous function:", func() string {
+	fmt.Printf("function s: %v\n", s())
+	fmt.Printf("function i: %v\n", i())
+	fmt.Printf("function b: %v\n", b())
+	fmt.Printf("anonymous function: %v\n", func() string {
 		return "I'm anonymous"
-	})
+	}())
 }
 
 // Channels are used for sending data between goroutines. Types
@@ -165,7 +174,8 @@ func Channels() {
 
 	b <- "World"
 
-	fmt.Println("receiving a:", <-a, "/ receiving b:", <-b)
+	fmt.Printf("receiving a: %v\n", <-a)
+	fmt.Printf("receiving b: %v\n", <-b)
 }
 
 func main() {

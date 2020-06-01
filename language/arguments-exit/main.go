@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+	fmt.Println("----- Arguments and Exit")
+
 	var how string
 	var who string
 
