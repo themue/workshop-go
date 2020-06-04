@@ -58,6 +58,10 @@
 
 ### Patterns
 
+* [Data, Objects, and Services](practise/dos/main.go)
+* [Options](practise/options/main.go)
+* [PubSub](practise/pubsub/main.go)
+
 ### Snares
 
 ### RESTful APIs
