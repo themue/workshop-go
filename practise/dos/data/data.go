@@ -25,10 +25,10 @@ type Storage struct {
 // surpress fields when marshalling to JSON. Same for XML
 // and other encodings.
 type File struct {
-	ID         string `json:"id"`
-	StorrageID string `json:"storrage_id"`
-	Location   string `json:"location"`
-	Name       string `json:"name"`
+	ID        string `json:"id"`
+	StorageID string `json:"storage_id"`
+	Location  string `json:"location"`
+	Name      string `json:"name"`
 }
 
 // Executable references a file to be executed, together

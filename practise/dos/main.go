@@ -1,20 +1,19 @@
 // Go Workshop - Practise - Data, Objects, and Services
 
-// Package main has a special role in the world of
-// Go packages. It expects a function named main()
-// will be compiled into the executable program.
 package main
 
-// import adds packages from standard library,
-// external repositories, or own code.
 import (
-	"fmt"
+	"context"
+
+	"github.com/themue/workshop-go/practise/dos/api"
+	"github.com/themue/workshop-go/practise/dos/manager"
+	"github.com/themue/workshop-go/practise/dos/registry"
 )
 
-// main is the main program without arguments
-// and return codes.
 func main() {
-	// Prefix fmt tells to use the exported function
-	// Println from package fmt.
-	fmt.Println("Hello, World")
+	ctx := context.Background()
+	manager := manager.New(ctx, registry.NewSimpleRegistry(), nil)
+	_ = api.New(ctx, manager)
+
+	<-ctx.Done()
 }
