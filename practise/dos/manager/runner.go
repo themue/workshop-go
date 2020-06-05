@@ -20,3 +20,8 @@ type Runner interface {
 	// Kill terminates the executable with the given ID.
 	Kill(id RunningID) error
 }
+
+// NewDefaultRunner returns a default runner implementation.
+func NewDefaultRunner() Runner {
+	return nil
+}
