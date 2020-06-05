@@ -23,3 +23,28 @@ func New() *Registry {
 		executables: make(map[string]data.Executable),
 	}
 }
+
+// SetStorage puts a storage into the registry and returns
+// a possible existing one with the same ID.
+func (r *Registry) SetStorage(in data.Storage) (data.Storage, bool) {
+	out, ok := r.storages[in.ID]
+	r.storages[in.ID] = in
+	return out, ok
+}
+
+// Storage returns the storage with the given ID.
+func (r *Registry) Storage(id string) (data.Storage, bool) {
+	return r.storages[id]
+}
+
+// FindStorage returns all storages where the function matches
+// returns true.
+func (r *Registry) FindStorage(matches func(s data.Storage) bool) []data.Storage {
+	found := []data.Storage{}
+	for _, s := range r.storages {
+		if matches(s) {
+			found = append(found, s)
+		}
+	}
+	return found
+}
