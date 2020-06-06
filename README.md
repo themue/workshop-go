@@ -60,6 +60,6 @@
 
 ## Practise
 
-* [Data, Objects, and Services](practise/dos/main.go)
-* [Options](practise/options/main.go)
-* [PubSub](practise/pubsub/main.go)
+* [Idea](practise/README.md)
+* [Universal Actor with Options](practise/gube/pkg/actor/)
+* [Entities](practise/gube/pkg/entities/)

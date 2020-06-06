@@ -9,5 +9,6 @@
 * 1965 model
 * Doing IT since more than 30 years
 * Solution Engineer at [Loodse](https://www.loodse.com/)
-* Helping customers in Cloud Native and Kubernetes projects
+* Here helping customers in Cloud Native and Kubernetes projects
+* Also developing own Kubernetes tools
 * Can online be found as @themue
