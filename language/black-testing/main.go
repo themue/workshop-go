@@ -1,10 +1,10 @@
-// Go Workshop - Language - White Box Testing
+// Go Workshop - Language - Black Box Testing
 package main
 
 import (
 	"fmt"
 
-	"github.com/themue/workshop-go/language/white-testing/calculator"
+	"github.com/themue/workshop-go/language/black-testing/calculator"
 )
 
 func main() {

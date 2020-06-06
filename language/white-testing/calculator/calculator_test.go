@@ -1,4 +1,4 @@
-// Go Workshop - Language - White Testing
+// Go Workshop - Language - White Box Testing
 
 package calculator
 

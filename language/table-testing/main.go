@@ -1,10 +1,10 @@
-// Go Workshop - Language - White Box Testing
+// Go Workshop - Language - Table-Driven Testing
 package main
 
 import (
 	"fmt"
 
-	"github.com/themue/workshop-go/language/white-testing/calculator"
+	"github.com/themue/workshop-go/language/table-testing/calculator"
 )
 
 func main() {

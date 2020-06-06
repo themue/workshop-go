@@ -1,4 +1,4 @@
-// Go Workshop - Language - White Box Testing
+// Go Workshop - Language - Black Box Testing
 
 package calculator
 
@@ -26,6 +26,15 @@ func (c *Calculator) Sub(register string, values ...float64) {
 	for _, value := range values {
 		c.registers[register] -= value
 	}
+}
+
+// RegisterKeys returns the current register keys.
+func (c *Calculator) RegisterKeys() []string {
+	var keys []string
+	for key := range c.registers {
+		keys = append(keys, key)
+	}
+	return keys
 }
 
 // Register returns the value of the given register.
