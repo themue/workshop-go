@@ -54,9 +54,9 @@
 
 ### Testing
 
-* [White Box Testing](language/white-testing/maing.go)
-* [Black Box Testing](language/black-testing/maing.go)
-* [Table Driven Testing](language/table-testing/maing.go)
+* [White Box Testing](language/white-testing/main.go)
+* [Black Box Testing](language/black-testing/main.go)
+* [Table Driven Testing](language/table-testing/main.go)
 
 ## Practise
 
