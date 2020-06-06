@@ -22,41 +22,41 @@
 
 ### Basics
 
-* [Hello, World](language/hello-world/main.go)
-* [Arguments and Exit Code](language/arguments-exit/main.go)
-* [Packages](language/packages/main.go)
-* [Functions](language/functions/main.go)
-* [Functions are also Types](language/functions-are-types/main.go)
-* [Variables](language/variables/main.go)
-* [Basic Types](language/basic-types/main.go)
-* [Compound Types](language/compound-types/main.go)
-* [Methods and Interfaces](language/methods-interfaces/main.go)
+* [Hello, World](language/hello-world/)
+* [Arguments and Exit Code](language/arguments-exit/)
+* [Packages](language/packages/)
+* [Functions](language/functions/)
+* [Functions are also Types](language/functions-are-types/)
+* [Variables](language/variables/)
+* [Basic Types](language/basic-types/)
+* [Compound Types](language/compound-types/)
+* [Methods and Interfaces](language/methods-interfaces/)
 
 ### Control
 
-* [If Statements](language/if-statements/main.go)
-* [Switch Statements](language/switch-statements/main.go)
-* [For Statements](language/for-statements/main.go)
-* [Defer Statements](language/defer-statements/main.go)
-* [Error Handling](language/error-handling/main.go)
-* [Panics](language/panics/main.go)
-* [Recovers](language/recovers/main.go)
+* [If Statements](language/if-statements/)
+* [Switch Statements](language/switch-statements/)
+* [For Statements](language/for-statements/)
+* [Defer Statements](language/defer-statements/)
+* [Error Handling](language/error-handling/)
+* [Panics](language/panics/)
+* [Recovers](language/recovers/)
 
 ### Concurrency
 
 * [General](language/concurrency-general/README.md)
-* [Simply do it in background](language/go-do-it/main.go)
-* [Do it with result](language/go-do-it-with-result/main.go)
-* [Do it for all input](language/go-do-it-for-all/main.go)
-* [Do it with me](language/go-do-it-with-me/main.go)
-* [Gouroutines Services](language/go-services/main.go)
-* [Doing it with Actors](language/go-actors/main.go)
+* [Simply do it in background](language/go-do-it/)
+* [Do it with result](language/go-do-it-with-result/)
+* [Do it for all input](language/go-do-it-for-all/)
+* [Do it with me](language/go-do-it-with-me/)
+* [Gouroutines Services](language/go-services/)
+* [Doing it with Actors](language/go-actors/)
 
 ### Testing
 
-* [White Box Testing](language/white-testing/main.go)
-* [Black Box Testing](language/black-testing/main.go)
-* [Table Driven Testing](language/table-testing/main.go)
+* [White Box Testing](language/white-testing/)
+* [Black Box Testing](language/black-testing/)
+* [Table Driven Testing](language/table-testing/)
 
 ## Practise
 
