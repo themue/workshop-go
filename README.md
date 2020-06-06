@@ -52,16 +52,14 @@
 * [Gouroutines Services](language/go-services/main.go)
 * [Doing it with Actors](language/go-actors/main.go)
 
-## Practise
-
 ### Testing
 
-### Patterns
+* [White Box Testing](language/white-testing/maing.go)
+* [Black Box Testing](language/black-testing/maing.go)
+* [Table Driven Testing](language/table-testing/maing.go)
+
+## Practise
 
 * [Data, Objects, and Services](practise/dos/main.go)
 * [Options](practise/options/main.go)
 * [PubSub](practise/pubsub/main.go)
-
-### Snares
-
-### RESTful APIs

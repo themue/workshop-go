@@ -35,6 +35,8 @@ func Slices() {
 	// Direct creation during assignment.
 	b = []byte{0, 1, 3, 3}
 
+	fmt.Printf("length of b is %d\n", len(b))
+
 	// Append is a built-in statement to append
 	// elements to slices.
 	b = append(b, 1)
@@ -63,20 +65,26 @@ func Maps() {
 	msi["foo"] = 12
 	msi["bar"] = 34
 	msi["baz"] = 56
+	msi["dunno"] = 1337
 
 	// Access with non-assigned keys returns the default value.
 	foo := msi["foo"]
 	yadda := msi["yadda"]
 
-	fmt.Println("foo:", foo, "/ yadda:", yadda)
+	fmt.Printf("lenght of msi is %d\n", len(msi))
+	fmt.Printf("foo:   %d\n", foo)
+	fmt.Printf("yadda: %d\n", yadda)
+
+	// delete allows to delete a map entry.
+	delete(msi, "dunno")
 
 	// Access with a second bool assignment returns if key
 	// has been set.
 	bar, barOK := msi["bar"]
 	dunno, dunnoOK := msi["dunno"]
 
-	fmt.Printf("bar: %d / ok: %t\n", bar, barOK)
-	fmt.Printf("dunno: %d / ok: %t\n", dunno, dunnoOK)
+	fmt.Printf("bar:   %d (ok is %t)\n", bar, barOK)
+	fmt.Printf("dunno: %d (ok is %t)\n", dunno, dunnoOK)
 }
 
 // Structs are types containing a number of fields. These
