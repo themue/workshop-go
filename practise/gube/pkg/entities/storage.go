@@ -17,3 +17,14 @@ type Storage struct {
 	Type       StorageType       `json:"type"`
 	TypeConfig map[string]string `json:"type_config"`
 }
+
+// DeepCopyInto copies all fields into the given instance.
+func (in *Storage) DeepCopyInto(out *Storage) {
+	*out = *in
+	if in.TypeConfig != nil {
+		out.TypeConfig = make(map[string]string)
+		for k, v := range in.TypeConfig {
+			out.TypeConfig[k] = v
+		}
+	}
+}
