@@ -62,4 +62,6 @@
 
 * [Idea](practise/README.md)
 * [Universal Actor with Options](practise/gube/pkg/actor/)
-* [Entities](practise/gube/pkg/entities/)
+* [Definition of the Entities](practise/gube/pkg/entities/)
+* [Registry for all Entities](practise/gube/pkg/registry/)
+* [Storage for the Runnables](practise/gube/pkg/storage/)

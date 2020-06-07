@@ -21,13 +21,14 @@ type entitySets struct {
 }
 
 // InMemoryRegistry implements the Registry interface using a
-// simple nested map structure. An instance may be used concurrently.
+// simple number of in-memory maps per entity. It provides concurrent
+// usage.
 type InMemoryRegistry struct {
 	data entitySets
 	act  *actor.Actor
 }
 
-// NewInMemoryRegistry greates an instance of the in-memory
+// NewInMemoryRegistry creates an instance of the in-memory
 // registry. The concrete type is returned to allow white-box
 // testing or use other exported methods not defined in the
 // Registry interface.
