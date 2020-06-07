@@ -17,6 +17,7 @@ import (
 type entitySets struct {
 	Configs      map[string]entities.Config      `json:"configs"`
 	Environments map[string]entities.Environment `json:"environments"`
+	Services     map[string]entities.Service     `json:"services"`
 	Storages     map[string]entities.Storage     `json:"storages"`
 }
 
@@ -120,6 +121,37 @@ func (r *InMemoryRegistry) RetrieveEnvironment(id string) (entities.Environment,
 
 	if out.ID != id {
 		return out, fmt.Errorf("Environment with ID %q not found", id)
+	}
+
+	return out, nil
+}
+
+// StoreService implements the Registry interface.
+func (r *InMemoryRegistry) StoreService(in entities.Service) (entities.Service, error) {
+	var out entities.Service
+
+	err := r.act.DoSync(func() {
+		tmp := r.data.Services[in.ID]
+		tmp.DeepCopyInto(&out)
+		r.data.Services[in.ID] = in
+	}, time.Second)
+
+	return out, err
+}
+
+// RetrieveService implements the Registry interface.
+func (r *InMemoryRegistry) RetrieveService(id string) (entities.Service, error) {
+	var out entities.Service
+
+	if err := r.act.DoSync(func() {
+		tmp := r.data.Services[id]
+		tmp.DeepCopyInto(&out)
+	}, time.Second); err != nil {
+		return out, err
+	}
+
+	if out.ID != id {
+		return out, fmt.Errorf("Service with ID %q not found", id)
 	}
 
 	return out, nil

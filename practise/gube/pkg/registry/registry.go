@@ -26,6 +26,13 @@ type Registry interface {
 	// RetrieveEnvironment reads an Environment out of the registry.
 	RetrieveEnvironment(id string) (entities.Environment, error)
 
+	// StoreService writes a Service into the registry. A possible
+	// existing one will be returned.
+	StoreService(in entities.Service) (entities.Service, error)
+
+	// RetrieveService reads a Service out of the registry.
+	RetrieveService(id string) (entities.Service, error)
+
 	// StoreStorage writes a Storage into the registry. A possible
 	// existing one will be returned.
 	StoreStorage(in entities.Storage) (entities.Storage, error)
