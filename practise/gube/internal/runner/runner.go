@@ -25,20 +25,24 @@ type Notifier interface {
 // to spawn and kill a Runnable and cares for troubles during
 // runtime.
 type Runner struct {
-	mu       sync.Mutex
-	runnable runnable.Runnable
-	env      *runnable.Environment
-	notifier Notifier
-	running  bool
-	err      error
+	mu          sync.Mutex
+	runnable    runnable.Runnable
+	environment *runnable.Environment
+	notifier    Notifier
+	running     bool
+	err         error
 }
 
 // New creates a new Runner instance.
-func New(r runnable.Runnable, env *runnable.Environment, notifier Notifier) *Runner {
+func New(
+	run runnable.Runnable,
+	env *runnable.Environment,
+	notifier Notifier,
+) *Runner {
 	return &Runner{
-		runnable: r,
-		env:      env,
-		notifier: notifier,
+		runnable:    run,
+		environment: env,
+		notifier:    notifier,
 	}
 }
 
@@ -47,7 +51,8 @@ func (r *Runner) Spawn() error {
 	r.mu.Lock()
 	defer r.mu.Unlock()
 	if r.running {
-		return fmt.Errorf("Runner already runs ID %q", r.runnable.ID())
+		// Runner already runs.
+		return nil
 	}
 	// Start the Runnable as goroutine.
 	go func() {
@@ -67,7 +72,7 @@ func (r *Runner) Spawn() error {
 			}
 		}()
 		// Now let the runnable run.
-		if err = r.runnable.Run(r.env); err != nil {
+		if err = r.runnable.Run(r.environment); err != nil {
 			r.notifier.NotifyRunnerError(r.runnable.ID(), err)
 		}
 	}()
