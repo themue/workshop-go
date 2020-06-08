@@ -64,7 +64,7 @@
 
 * [Declarative Go Environment](practise/README.md)
 
-### Core
+### Gube Core
 
 * [Universal Actor with Options](practise/gube/pkg/actor/)
 * [Definition of the Entities](practise/gube/pkg/entities/)
@@ -73,7 +73,7 @@
 * [Interna Help for the Manager](practise/gube/internal/runner/)
 * [And now manage it](practise/gube/pkg/manager/)
 
-### RESTful API
+### Gube RESTful API
 
 * [Start adding API tools](practise/gube/internal/httpx/)
 * [First API handler](practise/gube/internal/handler/)

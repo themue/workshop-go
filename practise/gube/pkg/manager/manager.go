@@ -45,7 +45,7 @@ func New(options ...Option) *Manager {
 		runners:   make(map[string]*runner.Runner),
 		logger:    log.New(os.Stdout, "gube", log.Ldate|log.Ltime|log.Lshortfile),
 	}
-	m.callback := &callback{
+	m.callback = &callback{
 		manager: m,
 	}
 
@@ -92,29 +92,37 @@ func (m *Manager) Deploy(ents ...interface{}) {
 			}
 			// Check potential error.
 			if err != nil {
-				m.Logf("error during deployment: %v", err)
+				m.logf("error during deployment: %v", err)
 			}
 		}
 	}, 5*time.Second); err != nil {
 		m.err = err
-		m.Logf("deployment of entities failed")
+		m.logf("deployment of entities failed")
 	}
 }
 
 // Spawn starts the Service with the given ID.
-func (m *Manager) Spawn(id string) error {
-	// Check already spawned (and potentially killed) Runners first.
-	run, ok := m.runners[id]
-	if !ok {
-		// Prepare a new Runner.
-		var err error
-		run, err = m.prepareRunner(id)
-		if err != nil {
-			return err
+func (m *Manager) Spawn(id string) {
+	if err := m.act.DoAsync(func() {
+		run, ok := m.runners[id]
+		if !ok {
+			// Prepare a new Runner.
+			var err error
+			run, err = m.prepareRunner(id)
+			if err != nil {
+				m.logf("preparing runner for %q failed: %v", id, err)
+				return
+			}
+			err = run.Spawn()
+			if err != nil {
+				m.logf("spawning runner for %q failed: %v", id, err)
+				return
+			}
 		}
+	}, 5*time.Second); err != nil {
+		m.err = err
+		m.logf("spawning service %q failed: %v", id, err)
 	}
-	// Now spawn the Runner.
-	return run.Spawn()
 }
 
 // Err returns the current error status.
@@ -176,4 +184,33 @@ func (m *Manager) prepareEnvironment(id string) (*runnable.Environment, error) {
 		env.Storages[id] = store
 	}
 	return env, nil
+}
+
+// notifyRunnerError is used by the callback for notifications.
+func (m *Manager) notifyRunnerError(id string, rerr error) {
+	// TODO Restart if configured.
+}
+
+// notifyRunnerPanic is used by the callback for notifications.
+func (m *Manager) notifyRunnerPanic(id string, rerr error) {
+	if err := m.act.DoAsync(func() {
+		m.logf("service %q had a panic: %v", id, rerr)
+		esvc, err := m.registry.RetrieveService(id)
+		if err != nil {
+			m.logf("panic handling: service %q cannot be retrieved: %v", id, err)
+			return
+		}
+		if !esvc.Restart {
+			return
+		}
+		m.Spawn(id)
+	}, 5*time.Second); err != nil {
+		m.err = err
+		m.logf("panic notification for %q failed: %v", id, err)
+	}
+}
+
+// logf is a simple standard logginf.
+func (m *Manager) logf(format string, v ...interface{}) {
+	m.logger.Printf(format, v...)
 }

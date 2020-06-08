@@ -55,27 +55,7 @@ func (r *Runner) Spawn() error {
 		return nil
 	}
 	// Start the Runnable as goroutine.
-	go func() {
-		var err error
-		defer func() {
-			// Care for status.
-			r.mu.Lock()
-			defer r.mu.Unlock()
-			r.running = false
-			r.err = err
-		}()
-		defer func() {
-			// Care for panics.
-			if rec := recover(); rec != nil {
-				err = fmt.Errorf("Runner %q had panic: %v", r.runnable.ID(), rec)
-				r.notifier.NotifyRunnerPanic(r.runnable.ID(), err)
-			}
-		}()
-		// Now let the runnable run.
-		if err = r.runnable.Run(r.environment); err != nil {
-			r.notifier.NotifyRunnerError(r.runnable.ID(), err)
-		}
-	}()
+	go r.run()
 	return nil
 }
 
@@ -98,4 +78,32 @@ func (r *Runner) Err() error {
 	r.mu.Lock()
 	defer r.mu.Unlock()
 	return r.err
+}
+
+// run will be started as goroutine and makes the Runnable
+// work as well as it cares of the status and listeners when
+// it ends.
+func (r *Runner) run() {
+	var err error
+	defer func() {
+		// Care for status and possible listeners.
+		r.mu.Lock()
+		defer r.mu.Unlock()
+		for _, storage := range r.environment.Storages {
+			storage.RemoveListener(r.runnable.ID())
+		}
+		r.running = false
+		r.err = err
+	}()
+	defer func() {
+		// Care for panics.
+		if rec := recover(); rec != nil {
+			err = fmt.Errorf("Runner %q had panic: %v", r.runnable.ID(), rec)
+			go r.notifier.NotifyRunnerPanic(r.runnable.ID(), err)
+		}
+	}()
+	// Now let the runnable run.
+	if err = r.runnable.Run(r.environment); err != nil {
+		go r.notifier.NotifyRunnerError(r.runnable.ID(), err)
+	}
 }

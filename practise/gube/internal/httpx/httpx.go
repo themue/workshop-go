@@ -145,7 +145,7 @@ func MarshalBody(w io.Writer, h http.Header, v interface{}) error {
 	case ContainsContentType(h, ContentTypeXML):
 		data, err = xml.Marshal(v)
 		if err != nil {
-			return fmt.Errof("cannot marshal to XML: %v", err)
+			return fmt.Errorf("cannot marshal to XML: %v", err)
 		}
 	default:
 		vbs, ok := v.([]byte)
