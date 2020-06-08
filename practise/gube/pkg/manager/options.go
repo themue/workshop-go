@@ -30,3 +30,12 @@ func Registry(r registry.Registry) Option {
 		}
 	}
 }
+
+// Port sets the port of the RESTful API. Default is 8080.
+func Port(port int) Option {
+	return func(m *Manager) {
+		if port > 0 {
+			m.api = newAPI(m, port)
+		}
+	}
+}

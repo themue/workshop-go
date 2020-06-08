@@ -15,8 +15,8 @@ type ConfigsHandler struct {
 	registry registry.Registry
 }
 
-// NewConfigHandler ...
-func NewConfigHandler(registry registry.Registry) *ConfigsHandler {
+// NewConfigsHandler initializes the handler for Configs.
+func NewConfigsHandler(registry registry.Registry) *ConfigsHandler {
 	return &ConfigsHandler{
 		registry: registry,
 	}

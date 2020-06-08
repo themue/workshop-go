@@ -30,6 +30,7 @@ type Manager struct {
 	storages  map[string]storage.Storage
 	runnables map[string]runnable.Runnable
 	runners   map[string]*runner.Runner
+	api       *api
 	act       *actor.Actor
 	logger    *log.Logger
 	callback  *callback
@@ -57,6 +58,9 @@ func New(options ...Option) *Manager {
 	m.act = actor.New((actor.Context(m.ctx)))
 	if m.registry == nil {
 		m.registry = registry.NewInMemoryRegistry(m.ctx)
+	}
+	if m.api == nil {
+		m.api = newAPI(m, 8080)
 	}
 
 	return m
