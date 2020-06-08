@@ -77,3 +77,4 @@
 
 * [Start adding API tools](practise/gube/internal/httpx/)
 * [First API handler](practise/gube/internal/handler/)
+* [API integration in Manager](practise/gube/pkg/manager/)
