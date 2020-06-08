@@ -60,12 +60,20 @@
 
 ## Practise
 
-* [Idea](practise/README.md)
+### Idea
+
+* [Declarative Go Environment](practise/README.md)
+
+### Core
+
 * [Universal Actor with Options](practise/gube/pkg/actor/)
 * [Definition of the Entities](practise/gube/pkg/entities/)
 * [Registry for all Entities](practise/gube/pkg/registry/)
 * [Storage for the Runnables](practise/gube/pkg/storage/)
 * [Interna Help for the Manager](practise/gube/internal/runner/)
 * [And now manage it](practise/gube/pkg/manager/)
+
+### RESTful API
+
 * [Start adding API tools](practise/gube/internal/httpx/)
-* [And now with the API](practise/gube/internal/handler/)
+* [First API handler](practise/gube/internal/handler/)

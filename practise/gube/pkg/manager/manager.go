@@ -1,5 +1,7 @@
 // Go Workshop - Practise - Gube - Manager
 
+// Package manager provides the main type Manager for
+// interaction with Gube.
 package manager
 
 import (
@@ -30,6 +32,7 @@ type Manager struct {
 	runners   map[string]*runner.Runner
 	act       *actor.Actor
 	logger    *log.Logger
+	callback  *callback
 	err       error
 }
 
@@ -41,6 +44,9 @@ func New(options ...Option) *Manager {
 		runnables: make(map[string]runnable.Runnable),
 		runners:   make(map[string]*runner.Runner),
 		logger:    log.New(os.Stdout, "gube", log.Ldate|log.Ltime|log.Lshortfile),
+	}
+	m.callback := &callback{
+		manager: m,
 	}
 
 	for _, option := range options {
@@ -111,35 +117,6 @@ func (m *Manager) Spawn(id string) error {
 	return run.Spawn()
 }
 
-// NotifyRunnerError is a callback for the runner in case of an error.
-func (m *Manager) NotifyRunnerError(id string, err error) {
-	// TODO Restart if configured.
-}
-
-// NotifyRunnerPanic is a callback for the Runner in case of a panic.
-func (m *Manager) NotifyRunnerPanic(id string, err error) {
-	m.Logf("service %q had a panic: %v", id, err)
-	esvc, err := m.registry.RetrieveService(id)
-	if err != nil {
-		m.Logf("panic handling: service %q cannot be retrieved: %v", id, err)
-		return
-	}
-	if !esvc.Restart {
-		return
-	}
-	// Restart is configured, so do it.
-	err = m.Spawn(id)
-	if err != nil {
-		m.Logf("panic handling: service %q cannot be restarted: %v", id, err)
-	}
-}
-
-// Logf provides logging for the Manager and via environment to
-// the Runnables.
-func (m *Manager) Logf(format string, v ...interface{}) {
-	m.logger.Printf(format, v...)
-}
-
 // Err returns the current error status.
 func (m *Manager) Err() error {
 	m.mu.RLock()
@@ -161,14 +138,14 @@ func (m *Manager) prepareRunner(id string) (*runner.Runner, error) {
 	if err != nil {
 		return nil, err
 	}
-	run := runner.New(runable, env, m)
+	run := runner.New(runable, env, m.callback)
 	return run, nil
 }
 
 // prepareEnvironment creates a runnable Environment.
 func (m *Manager) prepareEnvironment(id string) (*runnable.Environment, error) {
 	env := &runnable.Environment{
-		Logger:         m,
+		Logger:         m.callback,
 		Configurations: make(map[string]runnable.Config),
 		Storages:       make(map[string]storage.Storage),
 	}
