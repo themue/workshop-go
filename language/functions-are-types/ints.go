@@ -2,7 +2,9 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // IntWorker defines the signature of a function that takes
 // an integer as argument and returns an integer.

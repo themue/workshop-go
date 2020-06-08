@@ -1,7 +1,7 @@
 // Go Workshop - Language - Packages
 
 // Package calculator defines the own package calculator,
-// which has to be import by others for usage.
+// which has to be imported by others for usage.
 package calculator
 
 // Add is an exportet function. No need for a keyword, it's

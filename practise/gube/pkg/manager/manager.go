@@ -108,20 +108,20 @@ func (m *Manager) Deploy(ents ...interface{}) {
 // Spawn starts the Service with the given ID.
 func (m *Manager) Spawn(id string) {
 	if err := m.act.DoAsync(func() {
+		var err error
 		run, ok := m.runners[id]
 		if !ok {
 			// Prepare a new Runner.
-			var err error
 			run, err = m.prepareRunner(id)
 			if err != nil {
 				m.logf("preparing runner for %q failed: %v", id, err)
 				return
 			}
-			err = run.Spawn()
-			if err != nil {
-				m.logf("spawning runner for %q failed: %v", id, err)
-				return
-			}
+		}
+		err = run.Spawn()
+		if err != nil {
+			m.logf("spawning runner for %q failed: %v", id, err)
+			return
 		}
 	}, 5*time.Second); err != nil {
 		m.err = err

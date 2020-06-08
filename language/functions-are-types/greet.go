@@ -22,12 +22,12 @@ func (d Dog) Bark(whom string) string {
 
 // Duck is another type with a method matching to the
 // Greeter definition.
-type Duck struct{}
+type Duck string
 
 // Quack has a different name too but the signature
 // also matches Greeter.
 func (d Duck) Quack(whom string) string {
-	return fmt.Sprintf("Quack quack, %s!", whom)
+	return fmt.Sprintf("Quack quack, I'm %s, %s!", d, whom)
 }
 
 // WorkshopGreet is a simple function matching to Greeter.
@@ -41,7 +41,7 @@ func SomeGreetings() {
 
 	var greet Greeter
 	var dog = Dog{}
-	var duck = Duck{}
+	var duck Duck = "Abc"
 
 	greet = dog.Bark
 	fmt.Printf("Dog greets: %q\n", greet("John Doe"))
